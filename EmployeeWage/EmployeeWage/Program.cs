@@ -10,6 +10,17 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
+            Random random = new Random();
+            int empcheck = random.Next(0, 2);
+            if (empcheck==1)
+            {
+                Console.WriteLine("Employee is present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is absent");
+            }
+            Console.ReadKey();
         }
     }
 }
