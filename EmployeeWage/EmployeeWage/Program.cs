@@ -12,13 +12,18 @@ namespace EmployeeWage
         {
             Random random = new Random();
             int isFullTime = 1;
+            int isPartTime = 2;
             int empWage = 0;
             int ratePerHr = 20;
             int empHrs = 0;
-            int empcheck = random.Next(0, 2);
+            int empcheck = random.Next(0, 3);
             if (empcheck==isFullTime)
             {
                 empHrs = 8;
+            }
+            else if(empcheck==isPartTime)
+            {
+                empHrs = 4;
             }
             else
             {
