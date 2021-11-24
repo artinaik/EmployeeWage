@@ -10,18 +10,17 @@ namespace EmployeeWage
     {
         public const int isFullTime = 1;
         public const int isPartTime = 2;
-        public const int workingDays = 20;
-        public const int maxWorkingHr = 100;
+        //public const int workingDays = 20;
+        //public const int maxWorkingHr = 100;
         static void Main(string[] args)
         {
-            CalculateEmpWage();
+            CalculateEmpWage("Bridgelabz",20,20,100);
+            CalculateEmpWage("TCS", 15, 25, 100);
             Console.ReadKey();
         }
-        public static int CalculateEmpWage()
+        public static int CalculateEmpWage(string company,int ratePerHr,int workingDays,int maxWorkingHr)
         {
                 Random random = new Random();
-                int empWage = 0;
-                int ratePerHr = 20;
                 int empHrs = 0;
                 int totalWage = 0;
                 int totalEmpHr = 0;
@@ -42,12 +41,11 @@ namespace EmployeeWage
                             empHrs = 0;
                             break;
                     }
-                    empWage = empHrs * ratePerHr;
-                    totalWage = totalWage + empWage;
-                Console.WriteLine(" Days  " + totalWorkingdays + "  Emp hrs is  " + empHrs);
-               
-                }
-            Console.WriteLine("Total Employee wage is " + totalWage);
+                totalEmpHr = totalEmpHr + empHrs;
+                 Console.WriteLine(" Days  " + totalWorkingdays + "  Emp hrs is  " + empHrs);
+            }
+            totalWage = totalEmpHr*ratePerHr;
+            Console.WriteLine("Total employee wage for {0} is {1} ", company, totalWage);
             return totalWage;
         }
           
